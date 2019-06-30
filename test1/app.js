@@ -33,6 +33,16 @@ App({
       }
     })
   },
+  onShow(options) {
+    // Do something when show.
+  },
+  onHide() {
+    // Do something when hide.
+  },
+  onError(msg) {
+    console.log(msg)
+  },
+  //全局作用域变量
   globalData: {
     userInfo: null
   }

@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
+//模块化
+var common = require('common.js')
 
 Page({
   data: {
@@ -11,10 +13,19 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
+    console.log("navigateTo,logs")
+    wx.reLaunch({
       url: '../logs/logs'
     })
   },
+  helloMINA: function () {
+    common.sayHello('MINA')
+  },
+  goodbyeMINA: function () {
+    common.sayGoodbye('MINA')
+  },
+
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -51,5 +62,23 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  onTabItemTap(item) {
+    //进入页面时触发
+    console.log(item.index)
+    console.log(item.pagePath)
+    console.log(item.text)
+  },
+  onShow: function () {
+    // Do something when page show.
+  },
+  onReady: function () {
+    // Do something when page ready.
+  },
+  onHide: function () {
+    // Do something when page hide.
+  },
+  onUnload: function () {
+    // Do something when page close.
   }
 })
