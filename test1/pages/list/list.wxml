@@ -11,4 +11,6 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
+
+  <navigator url="/pages/list/detail/detail?title=detail" hover-class="other-navigator-hover">redirect</navigator>
 </view>

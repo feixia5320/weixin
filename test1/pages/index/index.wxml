@@ -8,7 +8,9 @@
     </block>
     <p>132</p>
   </view>
+
   <view bindtap="helloMINA">helloMINA</view>
+  
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

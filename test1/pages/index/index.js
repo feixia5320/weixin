@@ -80,5 +80,9 @@ Page({
   },
   onUnload: function () {
     // Do something when page close.
+  },
+  onResize(res) {
+    res.size.windowWidth // 新的显示区域宽度
+    res.size.windowHeight // 新的显示区域高度
   }
 })
