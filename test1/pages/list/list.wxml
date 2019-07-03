@@ -1,26 +1,38 @@
 <!--index.wxml-->
 <view>
+  <!-- 轮播图 -->
   <view class="page-section page-section-spacing swiper">
-    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" 
-      vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" 
-      previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
       <block wx:for="{{background}}" wx:key="*this">
         <swiper-item>
-          <view class="swiper-item {{item}}"></view>
+          <image src='/img/{{item}}.jpg'></image>
         </swiper-item>
       </block>
     </swiper>
   </view>
-  <view class="page-section" >
-      <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell weui-cell_switch">
-          <view class="weui-cell__bd">自动播放</view>
-          <view class="weui-cell__ft">
-            <switch checked="{{autoplay}}" bindchange="changeProperty" data-property-name="autoplay" />
-          </view>
+  <view class="page-section">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_switch">
+        <view class="weui-cell__bd">自动播放</view>
+        <view class="weui-cell__ft">
+          <switch checked="{{autoplay}}" bindchange="changeProperty" data-property-name="autoplay" />
         </view>
       </view>
     </view>
+  </view>
+  <view class="navigator">
+    <navigator class='navItem' url="/pages/list/detail/detail?title=detail" hover-class="other-navigator-hover">redirect</navigator>
+  </view>
+  <!-- 商品分类 -->
+  <view class='categoryContain'>
+    <block wx:for="{{categoryImg}}" wx:key="*this">
+      <view style='categorycont' data-item='{{item}}' bindtap='tapImage'>
+        <image src='/img/{{item.src}}.jpg' class='category'></image>
+        <view style='text-align: center;'>{{item.title}}</view>
+      </view>
+    </block>
 
-  <navigator url="/pages/list/detail/detail?title=detail" hover-class="other-navigator-hover">redirect</navigator>
+  </view>
+
+
 </view>

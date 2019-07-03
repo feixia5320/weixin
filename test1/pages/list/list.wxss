@@ -113,3 +113,30 @@ button:last-child{
 .page-foot{
   margin-top: 50rpx;
 }
+
+.navigator {
+  width: 100%;
+  height: 80rpx;
+  border: 1rpx solid #e4dede;
+  background-color: white;
+  display: flex;
+  align-items: stretch;
+}
+.navItem{
+  flex: auto;
+  display: block;
+}
+.categoryContain{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.categorycont{
+  width: 100px;
+  
+}
+.category{
+  width:150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}

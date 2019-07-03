@@ -4,20 +4,57 @@ const app = getApp()
 
 Page({
   data: {
-    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    background: ['pic1', 'pic2', 'pic3'],
     indicatorDots: true,
     vertical: false,
-    autoplay: false,
+    autoplay: true,
     circular: true,
     interval: 2000,
     duration: 500,
     previousMargin: 0,
-    nextMargin: 0
+    nextMargin: 0,
+    categoryImg: [{
+      src: 't1',
+      title: "aa"
+    }, {
+      src: 't2',
+      title: "bb"
+    }, {
+      src: 't3',
+      title: "cc"
+    }, {
+      src: 't1',
+      title: "aa"
+    }, {
+      src: 't2',
+      title: "bb"
+    }, {
+      src: 't3',
+      title: "cc"
+    }, {
+      src: 't1',
+      title: "aa"
+    }, {
+      src: 't2',
+      title: "bb"
+    }, {
+      src: 't3',
+      title: "cc"
+    }, {
+      src: 't3',
+      title: "cc"
+    }]
   },
-  changeProperty: function (e) {
+  changeProperty: function(e) {
     var propertyName = e.currentTarget.dataset.propertyName
     var newData = {}
     newData[propertyName] = e.detail.value
     this.setData(newData)
   },
+  tapImage: function(e){
+    let item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: '/pages/list/detail/detail?title=detail',
+    })
+  }
 })
